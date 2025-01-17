@@ -25,9 +25,10 @@ services:
       - imagelitenetwork
 
   sbootapp:
-    build:
-      dockerfile: Dockerfile
-      context: ./imageliteapi
+#    build:
+#      dockerfile: Dockerfile
+#      context: ./imageliteapi
+    image: renatoguii/imageliteproject:sbootapp # Usando imagem do Docker Hub
     container_name: imageliteapi
     depends_on:
       - db
@@ -39,9 +40,10 @@ services:
       - "POSTGRES_HOST=db"
 
   appweb:
-    build:
-      dockerfile: Dockerfile
-      context: ./imagelite  
+#    build:
+#      dockerfile: Dockerfile
+#      context: ./imagelite
+    image: renatoguii/imageliteproject:appweb  # Usando a imagem do Docker Hub
     container_name: imageliteapp
     depends_on:
       - sbootapp
@@ -50,7 +52,7 @@ services:
     networks:
       - imagelitenetwork
     expose:
-      - 3000  
+      - 3000
 
 networks:
   imagelitenetwork:
