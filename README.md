@@ -6,6 +6,7 @@ Este é um sistema Fullstack de gerenciamento de imagens, que inclui autenticaç
 
 ### Frontend
 - **Next.js** com **TypeScript**
+- **Tailwind**
 
 ### Backend
 - **Spring Boot**
@@ -37,7 +38,11 @@ Este é um sistema Fullstack de gerenciamento de imagens, que inclui autenticaç
 Para rodar o projeto utilizando os contêineres disponíveis no Docker Hub, siga os passos abaixo:
 
 ### Pré-requisitos
-Certifique-se de ter o **Docker** instalado em sua máquina.
+- Certifique-se de ter o **Docker** instalado em sua máquina.
+- Clone o Repositório:
+```bash
+git clone https://github.com/RenatoGuii/imageliteproject.git
+```
 
 ### Passo 1: Baixar os contêineres
 Execute o comando abaixo para baixar e rodar os contêineres:
