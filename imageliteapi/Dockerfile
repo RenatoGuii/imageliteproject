@@ -20,8 +20,5 @@ COPY --from=builder ./app/target/*.jar ./application.jar
 # Expôe a porta que vai rodar a aplicação dentro do container
 EXPOSE 8080
 
-ENV POSTGRES_HOST=localhost
-RUN echo "the env var POSTGRES_HOST value is $POSTGRES_HOST"
-
 # Comando que inicializa a aplicação (Por os comandos dentro do array)
 ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=production", "application.jar"]
