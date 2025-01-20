@@ -1,4 +1,4 @@
-package renatoguii.imageliteapi.dtos;
+package renatoguii.imageliteapi.dtos.user;
 
 import jakarta.validation.constraints.NotBlank;
 

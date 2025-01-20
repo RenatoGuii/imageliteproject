@@ -1,4 +1,4 @@
-package renatoguii.imageliteapi.dtos;
+package renatoguii.imageliteapi.dtos.image;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

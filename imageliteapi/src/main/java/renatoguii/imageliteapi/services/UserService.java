@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import renatoguii.imageliteapi.dtos.AutheticationDTO;
-import renatoguii.imageliteapi.dtos.UserDTO;
+import renatoguii.imageliteapi.dtos.user.AutheticationDTO;
+import renatoguii.imageliteapi.dtos.user.UserDTO;
 import renatoguii.imageliteapi.entities.user.UserEntity;
 import renatoguii.imageliteapi.exceptions.CustomAuthenticationException;
 import renatoguii.imageliteapi.exceptions.RegisterException;
-import renatoguii.imageliteapi.infra.security.AccessToken;
-import renatoguii.imageliteapi.infra.security.JwtService;
+import renatoguii.imageliteapi.infra.security.token.AccessToken;
+import renatoguii.imageliteapi.infra.security.token.JwtService;
 import renatoguii.imageliteapi.repositories.UserRepository;
 
 import java.util.Optional;

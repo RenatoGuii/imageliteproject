@@ -1,4 +1,4 @@
-package renatoguii.imageliteapi.dtos;
+package renatoguii.imageliteapi.dtos.image;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;

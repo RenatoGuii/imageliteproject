@@ -1,4 +1,4 @@
-package renatoguii.imageliteapi.infra.security;
+package renatoguii.imageliteapi.infra.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import renatoguii.imageliteapi.infra.security.token.JwtFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -35,9 +36,12 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/v1/users/**").permitAll();
-                    auth.requestMatchers(HttpMethod.GET, "/v1/images/**").permitAll();
-                    auth.anyRequest().authenticated();
+                    // Permitir acesso irrestrito aos endpoints do Swagger
+                    auth.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll();
+                    // Exigir autenticação para outros endpoints específicos
+                    auth.requestMatchers(HttpMethod.POST, "/v1/images").authenticated();
+                    // Permitir todas as outras requisições
+                    auth.anyRequest().permitAll();
                 })
                 // Adiciona um filtro customizado (jwtFilter) antes do filtro padrão de autenticação por username e password (UsernamePasswordAuthenticationFilter)
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

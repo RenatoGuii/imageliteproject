@@ -1,4 +1,4 @@
-package renatoguii.imageliteapi.infra.security;
+package renatoguii.imageliteapi.infra.security.token;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

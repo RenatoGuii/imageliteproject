@@ -1,4 +1,4 @@
-package renatoguii.imageliteapi.infra.security;
+package renatoguii.imageliteapi.infra.security.token;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.stereotype.Component;
